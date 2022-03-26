@@ -42,12 +42,12 @@ menu:
 # Website start time.
 # 站点运行开始时间.
 time:
-  enable: true
-  year: 2022 # 年份
-  month: 01 # 月份
-  date: 01 # 日期
-  hour: 13 # 小时
-  minute: 14 # 分钟
+  enable: false
+  year: 2019 # 年份
+  month: 06 # 月份
+  date: 28 # 日期
+  hour: 00 # 小时
+  minute: 00 # 分钟
   second: 00 # 秒
 
 # Index cover carousel configuration.
@@ -66,11 +66,11 @@ cover:
       - https://txmov2.a.yximgs.com/upic/2021/04/09/22/BMjAyMTA0MDkyMjMwMDhfMTg1ODk2MDg4N180NzUyOTMyMjA4Nl8xXzM=_b_B8e080d7ede19e6674d48a9f12545007b.mp4?pkey=AAVAfNhi5_f-HGkIPXrY5w6nyf4JibwOY-WwdHgSJ2aSoi-2WQLpiYDunLbRZQuESz875eMdsepRlVFtXg9nuQY58uRc-7AsF0kEMNR6QYBj56g9JFFMSGdsoKK2-SV27u8&tag=1-1617978682-xpcwebprofile-0-lcvipceuti-9e40072f87531f1a&clientCacheKey=3xbbtbrfxqpccp4_b.mp4
       - https://txmov2.a.yximgs.com/upic/2021/04/09/21/BMjAyMTA0MDkyMTQyNDRfMTg1ODk2MDg4N180NzUyNjAyMzA0N18xXzM=_b_B83b004b85aba8eca3ded270637616575.mp4
       - https://txmov2.a.yximgs.com/upic/2021/04/09/21/BMjAyMTA0MDkyMTU4MDNfMTg1ODk2MDg4N180NzUyNzE0MzkyNV8xXzM=_b_Bf94cee6bd181efeaca64049bd2e4e276.mp4
+# index page dream text,
 
 # pjax
 pjax: true
 
-# index page dream text,
 # index page dream text,
 # 配置首页显示"梦想"的语句.
 dream:
@@ -83,18 +83,22 @@ dream:
 # 是否在首页显示音乐.
 music:
   enable: true
-  autoHide: false   # hide automaticaly
-  server: tencent #require	music platform: netease, tencent, kugou, xiami, baidu
+  title: #非吸底模式有效
+    enable: true
+    show: 听听音乐
+  autoHide: true    # hide automaticaly
+  server: netease   #require	music platform: netease, tencent, kugou, xiami, baidu
   type: playlist    #require song, playlist, album, search, artist
-  id: 7865349211 #require	song id / playlist id / album id / search keyword
-  fixed: true      # 开启吸底模式
+  id: 503838841     #require	song id / playlist id / album id / search keyword
+  fixed: true       # 开启吸底模式
   autoplay: false   # 是否自动播放
   theme: '#42b983'
   loop: 'all'       # 音频循环播放, 可选值: 'all', 'one', 'none'
   order: 'random'   # 音频循环顺序, 可选值: 'list', 'random'
   preload: 'auto'   # 预加载，可选值: 'none', 'metadata', 'auto'
-  volume: 1         # 默认音量，请注意播放器会记忆用户设置，用户手动设置音量后默认音量即失效
-  listFolded: false  # 列表默认折叠
+  volume: 0.7       # 默认音量，请注意播放器会记忆用户设置，用户手动设置音量后默认音量即失效
+  listFolded: true  # 列表默认折叠
+  hideLrc: false     # 隐藏歌词
 
 # Whether to display the videos.
 # 是否在首页显示视频.
@@ -354,50 +358,18 @@ tcaptcha:
 # The configuration of the Valine comment module is not activated by default.
 # To use it, activate the configuration item and set appId and appKey.
 # Valine 评论模块的配置，默认为不激活，如要使用，就请激活该配置项，并设置 appId 和 appKey.
-# valine
-## https://valine.js.org/
 valine:
-  enable: true
-  appId: YXeb914FHCUxqnsMmdSdEBH8-gzGzoHsz
-  appKey: x9otrJzq2NCHpyW9qLYw9uYD
-  notify: true
-  verify: true
+  enable: false
+  appId:
+  appKey:
+  notify: false
+  verify: false
   visitor: true
-  avatar: 'robohash' # Gravatar style : mm/identicon/monsterid/wavatar/retro/hide
+  avatar: 'mm' # Gravatar style : mm/identicon/monsterid/wavatar/retro/hide
   pageSize: 10
-  placeholder: '🤣一起来玩，留下你的足迹吧~(记得点击验证哦)。\n🚀昵称使用QQ号可以自动补全邮箱和显示头像昵称等信息呢\n💣请文明评论哦禁止恶意评论' # Comment Box placeholder
-  count: true
-  enableQQ: true
-  recordIP: true
-  meta: [ 'nick', 'mail', 'link' ] # 评论者相关属性
-  requiredFields: [ 'nick','mail' ]
-  guest_info: [ 'nick', 'mail', 'link' ]
-  master:
-    - 89ca9fc627d42e188b31660e338bf03f  # md5加密后的博主邮箱
-    - 7021c3626ea74a66f99a96eb37940cf2  # md5加密后的博主邮箱
-  metaPlaceholder: # 输入框的背景文字
-    nick: 昵称/QQ号(必填)
-    mail: 邮箱(必填)
-    link: 网址(https://)
-  lang: zh-CN
-  tagMeta: # The String Array of Words to show Flag.[Just Only xCss Style mode]
-    - 博主
-    - 小伙伴
-    - 访客
-  friends: # The MD5 String Array of friends Email to show friends Flag.[Just Only xCss Style mode]
-    - 2d723b084472eb5c3854616804b4851c # 云梦 ╮不浅
-    - 68c4c9e1b9a3d34317dc6faefe2ea00e # 阿蓝
-    - ddf016c0f5a3318ea1fc0d20c8ac4429 # 不染轻裳
-    - 07f6f5a77acec1cf2848d45da1ace3b7 # 郭祥迎
-    - b2ccb12acd9586af59f588e6eda3168c # 果子酱
-    - d08a0457f664702197dd127bb9a17c2c # itsNekoDeng
-    - b52ddf21729e2963a42d5d526808099f # Tajang
-    - 5d15e6cd01332d9462562de7eb277133 # Mx
-    - aa1a0ae323a0ca99dfb391f9e0ca8565 # Xpand
-    - 5e067bcec10c1eca5b744f982156d672 # zhangYHui’s Blog
-    - ac99dc93552427fae0a076d22f6a4ce9 # Huanzの小窝
-    - 06beff69a2db452d873d6020d1924886 # 51xcode
-    - 190004b0922ac4fcd1489fa0aa34663d # 左羽
+  placeholder: 'just go go' # Comment Box placeholder
+  background: /medias/comment_bg.png
+  coolpushkey: 
 
 # The configuration of the MiniValine comment module is not activated by default.
 # To use it, activate the configuration item.
@@ -699,6 +671,7 @@ bbtime:
   appId: # 你的appId
   appKey: # 你的appKey
   serverURLs: # https://你的api
+
 
 # 图表绘制插件
 # 建议更换更换hexo-renderer-markdown-it引擎。参考下面链接

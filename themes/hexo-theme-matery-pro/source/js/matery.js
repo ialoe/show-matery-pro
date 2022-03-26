@@ -218,29 +218,3 @@ function switchNightMode() {
 $('#friends-link').masonry({
     itemSelector: '.friend-div'
 });
-
-function getScript(url, callback) {
-    var script = document.createElement('script')
-    script.type = "text/javascript"
-    if (typeof (callback) != "undefined") {
-        if (script.readyState) {
-            console.log(script.onreadystatechange)
-            script.onreadystatechange = function () {
-                if (script.readyState === "loaded" || script.readyState === "complete") {
-                    script.onreadystatechange = null
-                    callback()
-                }
-            }
-        } else {
-            script.onload = function () {
-                callback()
-            }
-        }
-    }
-    script.src = url
-    if (document.getElementById("scripts") != null) {
-        document.getElementById("scripts").appendChild(script)
-    } else {
-        document.body.appendChild(script)
-    }
-}
